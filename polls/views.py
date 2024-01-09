@@ -4,6 +4,6 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello, Django. This is polls app.")
+    return render(request, 'polls/index.html')
 
 
