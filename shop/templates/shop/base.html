@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop "Napitki"</title>
+</head>
+<body>
+<div>
+    <a href="{% url 'shop:products' %}">Products</a>
+    <a href="{% url 'shop:categories' %}">Categories</a>
+</div>
+{% block body %}{% endblock %}
+</body>
+</html>
