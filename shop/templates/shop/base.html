@@ -8,6 +8,16 @@
 <div>
     <a href="{% url 'shop:products' %}">Products</a>
     <a href="{% url 'shop:categories' %}">Categories</a>
+
+    {% if user.is_authenticated %}
+        <form action="{% url 'logout' %}?next={{ request.path }}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Logout" class="btn btn-danger"/>
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}?next={{ request.path }}" class="btn btn-info">Login</a>
+        <a href="{% url 'register'%}?next={{ request.path }}" class="btn-info">Register</a>
+    {% endif %}
 </div>
 {% block body %}{% endblock %}
 </body>
