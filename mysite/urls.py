@@ -22,6 +22,7 @@ from django.urls import path
 from shop import views
 
 urlpatterns = [
+    path('api/', include('api.urls')),
     path('polls/', include('polls.urls')),
     path('shop/', include('shop.urls')),
     path('admin/', admin.site.urls),
